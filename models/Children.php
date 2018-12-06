@@ -10,10 +10,10 @@ use Yii;
  * @property string $alias
  * @property string $email
  * @property string $password
- * @property string $brithdate
+ * @property string $birthdate
  * @property string $avatar
  * @property string $tutors_id
- * @property string $sexo
+ * @property string $gender
  *
  * @property Tutors $tutors
  * @property Progressheight[] $progressheights
@@ -36,13 +36,14 @@ class Children extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['alias', 'email', 'password', 'brithdate', 'tutors_id', 'sexo'], 'required'],
-            [['brithdate'], 'safe'],
-            [['alias', 'password'], 'string', 'max' => 20],
+            [['alias', 'email', 'password', 'birthdate', 'tutors_id', 'gender'], 'required'],
+            [['birthdate'], 'safe'],
+            [['alias'], 'string', 'max' => 20],
             [['email'], 'string', 'max' => 30],
+            [['password'], 'string', 'max' => 12],
             [['avatar'], 'string', 'max' => 40],
             [['tutors_id'], 'string', 'max' => 10],
-            [['sexo'], 'string', 'max' => 1],
+            [['gender'], 'string', 'max' => 1],
             [['alias'], 'unique'],
             [['tutors_id'], 'exist', 'skipOnError' => true, 'targetClass' => Tutors::className(), 'targetAttribute' => ['tutors_id' => 'id']],
         ];
@@ -57,10 +58,10 @@ class Children extends \yii\db\ActiveRecord
             'alias' => 'Alias',
             'email' => 'Email',
             'password' => 'Password',
-            'brithdate' => 'Brithdate',
+            'birthdate' => 'Birthdate',
             'avatar' => 'Avatar',
             'tutors_id' => 'Tutors ID',
-            'sexo' => 'Sexo',
+            'gender' => 'Gender',
         ];
     }
 

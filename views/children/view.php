@@ -31,10 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'alias',
             'email:email',
             'password',
-            'brithdate',
+            'birthdate',
             'avatar',
             'tutors_id',
-            'sexo',
+            'gender',
         ],
     ]) ?>
 

@@ -18,13 +18,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'brithdate')->textInput() ?>
+    <?= $form->field($model, 'birthdate')->textInput() ?>
 
     <?= $form->field($model, 'avatar')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'tutors_id')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'sexo')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'gender')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

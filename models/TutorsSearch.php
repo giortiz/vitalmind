@@ -18,8 +18,7 @@ class TutorsSearch extends Tutors
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['email', 'password', 'name', 'lastname', 'birthdate'], 'safe'],
+            [['id', 'name', 'lastname', 'email', 'password', 'birthdate'], 'safe'],
         ];
     }
 
@@ -59,14 +58,14 @@ class TutorsSearch extends Tutors
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
             'birthdate' => $this->birthdate,
         ]);
 
-        $query->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'password', $this->password])
+        $query->andFilterWhere(['like', 'id', $this->id])
             ->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'lastname', $this->lastname]);
+            ->andFilterWhere(['like', 'lastname', $this->lastname])
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'password', $this->password]);
 
         return $dataProvider;
     }

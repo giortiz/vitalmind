@@ -46,7 +46,7 @@ class TutorsController extends Controller
 
     /**
      * Displays a single Tutors model.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -65,7 +65,7 @@ class TutorsController extends Controller
     public function actionCreate()
     {
         $model = new Tutors();
-        
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
@@ -78,7 +78,7 @@ class TutorsController extends Controller
     /**
      * Updates an existing Tutors model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -98,7 +98,7 @@ class TutorsController extends Controller
     /**
      * Deletes an existing Tutors model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -112,7 +112,7 @@ class TutorsController extends Controller
     /**
      * Finds the Tutors model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
+     * @param string $id
      * @return Tutors the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */

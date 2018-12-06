@@ -18,7 +18,7 @@ class ChildrenSearch extends Children
     public function rules()
     {
         return [
-            [['alias', 'email', 'password', 'brithdate', 'avatar', 'tutors_id', 'sexo'], 'safe'],
+            [['alias', 'email', 'password', 'birthdate', 'avatar', 'tutors_id', 'gender'], 'safe'],
         ];
     }
 
@@ -58,7 +58,7 @@ class ChildrenSearch extends Children
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'brithdate' => $this->brithdate,
+            'birthdate' => $this->birthdate,
         ]);
 
         $query->andFilterWhere(['like', 'alias', $this->alias])
@@ -66,7 +66,7 @@ class ChildrenSearch extends Children
             ->andFilterWhere(['like', 'password', $this->password])
             ->andFilterWhere(['like', 'avatar', $this->avatar])
             ->andFilterWhere(['like', 'tutors_id', $this->tutors_id])
-            ->andFilterWhere(['like', 'sexo', $this->sexo]);
+            ->andFilterWhere(['like', 'gender', $this->gender]);
 
         return $dataProvider;
     }

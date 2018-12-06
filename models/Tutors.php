@@ -7,11 +7,11 @@ use Yii;
 /**
  * This is the model class for table "tutors".
  *
- * @property int $id
- * @property string $email
- * @property string $password
+ * @property string $id
  * @property string $name
  * @property string $lastname
+ * @property string $email
+ * @property string $password
  * @property string $birthdate
  *
  * @property Children[] $childrens
@@ -33,11 +33,11 @@ class Tutors extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'email', 'password', 'name', 'lastname', 'birthdate'], 'required'],
-            [['id'], 'integer'],
+            [['id', 'name', 'lastname', 'email', 'password', 'birthdate'], 'required'],
             [['birthdate'], 'safe'],
+            [['id'], 'string', 'max' => 10],
+            [['name', 'lastname', 'password'], 'string', 'max' => 20],
             [['email'], 'string', 'max' => 30],
-            [['password', 'name', 'lastname'], 'string', 'max' => 20],
             [['id'], 'unique'],
         ];
     }
@@ -49,10 +49,10 @@ class Tutors extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'email' => 'Email',
-            'password' => 'Password',
             'name' => 'Name',
             'lastname' => 'Lastname',
+            'email' => 'Email',
+            'password' => 'Password',
             'birthdate' => 'Birthdate',
         ];
     }
