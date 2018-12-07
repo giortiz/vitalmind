@@ -36,11 +36,11 @@ AppAsset::register($this);
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => ' my-navbar navbar-fixed-top',
         ],
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'navbar-nav navbar-right '],
         'items' => [
             ['label' => 'Principal', 'url' => ['/site/index']],
                         [
@@ -48,7 +48,7 @@ AppAsset::register($this);
                 'items' => [
                     
                     ['label' => '', 'url' => ['/alumnos']],
-                    ['label' => 'Calificaciones', 'url' => ['/calificaciones']],
+                    ['label' => 'Children', 'url' => ['/children']],
                 ],
             ],
             ['label' => 'Acerca de', 'url' => ['/site/about']],
@@ -96,14 +96,17 @@ AppAsset::register($this);
     </div>
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left"><a href="http://itvillahermosa.edu.mx/">&copy; Instituo Tecnológico de Villahermosa <?= date('Y') ?></a></p>
+<!-- Footer -->
+<footer class="page-footer font-small blue">
 
-        <p class="pull-right"><a href="http://www.tecnm.mx/">Tecnoloógico Nacional de México</a></p>
-    </div>
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
 </footer>
-
+<!-- Footer -->
 <?php $this->endBody() ?>
 </body>
 </html>

@@ -91,6 +91,9 @@ a.desc:after {
 }
 
 /* align the logout "link" (button in form) of the navbar */
+.my-navbar {
+    background-color: #e3f2fd;
+}
 .nav li > form > button.logout {
     padding: 15px;
     border: none;
